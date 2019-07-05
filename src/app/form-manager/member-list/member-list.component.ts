@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { User } from 'src/app/shared/classes/user';
+
 
 @Component({
   selector: 'app-member-list',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.scss']
 })
 export class MemberListComponent implements OnInit {
+ @Input() registeredUsers: number;
+ @Input() usersArray: Array<User>=[];
 
+ @Output() eraseUser = new EventEmitter<User>();
   constructor() { }
 
   ngOnInit() {
   }
 
+  deleteUser(deletedUser: User){
+    this.eraseUser.emit(deletedUser);
+  }
 }

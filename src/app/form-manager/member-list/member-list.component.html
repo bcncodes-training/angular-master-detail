@@ -1,1 +1,13 @@
-<p>member-list works!</p>
+<div class="row">
+  <p class=" text-center">Núm. usuarios registrados: {{registeredUsers}}</p>
+
+  <div *ngFor="let userItem of usersArray">
+
+    <div class="row">
+      <div class="col-sm-5">{{userItem.id}}</div>
+      <div class="col-sm-2">{{userItem.dni}}</div>
+      <div class="col-sm-4">{{userItem.nombre}}</div>
+      <div class="col-sm-1 text-right">
+        <input type="button" (click)="deleteUser(userItem)" class="btn btn-danger btn-xs" value='Delete'></div>
+    </div>
+  </div>

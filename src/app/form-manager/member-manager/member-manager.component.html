@@ -13,3 +13,9 @@
     <li><strong>Nombre:</strong>{{user.nombre}}</li>
   </ul>
 </div>
+
+<app-member-list
+ [usersArray] = "usersArray"
+ [registeredUsers]="registeredUsers"
+ (eraseUser)="erase($event)"
+  ></app-member-list>

@@ -48,5 +48,10 @@ export class MemberManagerComponent implements OnInit {
 
   }
 
+  erase(user: User){
+    const index = this.usersArray.indexOf(user);
+    this.usersArray.splice(index,1);
+    this.registeredUsers = this.usersArray.length;
+  }
 
 }
